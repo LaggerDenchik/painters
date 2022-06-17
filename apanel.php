@@ -3,28 +3,22 @@
     include("include/db_connect.php");
 
 ?>
-<!DOCTYPE HTML>
-<html>
+<!DOCTYPE html>
+<html lang="ru">
 <head>
-	<meta http-equiv="content-type" content="text/html" charset="UTF-8"/>
-    <link rel="stylesheet" href="css/reset.css">
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/header.css">
-    <link rel="stylesheet" href="css/footer.css">
-    <link rel="stylesheet" href="trackbar/trackbar.css">
-    <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
-    <title>Художники</title>
-    <script src="trackbar/trackbar.js"></script>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" href="css\reset.css">
+    <link rel="stylesheet" href="css\apanel.css">
+    <link rel="stylesheet" href="css\aheader.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Панель управления</title>
 </head>
-
 <body>
-
     <?php
-        include("include/header.php");
+        include("include\header.php");
     ?>
-    <main>
-    
-            <div class="content-painters">
+<div class="content-painters">
             <?php
             
                 $result = mysql_query("SELECT * FROM articles ",$link);
@@ -49,37 +43,23 @@
                             $height = 800;
                         }
                         
-                        if($row["id"]%2 != 0){
+                        
                             echo'<div class="painter" id="'.$row["id"].'">
                                 <div class="painter-photo">
                                     <img src="'.$img_path.'" width="'.$width.'" height="'.$height.'">
+                                    <input class="edit-but" type="button" value="Изменить">
                                 </div>
-                                <div class="painter-text">
-                                    <p class="p-text">'.$row["text"].'</p>
-                                </div>
-                            </div>
-                            ';
-                        }else{
-                            echo'<div class="painter" id="'.$row["id"].'">
-                                
-                                <div class="painter-text">
-                                    <p class="p-text">'.$row["text"].'</p>
-                                </div>
-                                <div class="painter-photo">
-                                    <img src="'.$img_path.'" width="'.$width.'" height="'.$height.'">
+                                    <div class="painter-text">
+                                        <p class="p-text">'.$row["text"].'<input class="edit-but" type="button" value="Изменить"></p>
                                 </div>
                             </div>
                             ';
-                        }
                         
                     }
                     while($row = mysql_fetch_array($result));   
                 }
             ?>
-            </div>
-    </main>
-    <?php
-        include("include/footer.php");
-    ?>
+            </div> 
+            
 </body>
 </html>

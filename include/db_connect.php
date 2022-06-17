@@ -1,7 +1,7 @@
 <?php
 $db_host = 'localhost';
-$db_user = 'root';
-$db_pass = '';
+$db_user = 'Artist';
+$db_pass = '12artist34';
 $db_database = 'db';
 
 $link = mysql_connect($db_host,$db_user,$db_pass);

@@ -1,10 +1,7 @@
 img {
-    height: 300px;
-    width: auto;
-}
-
-main {
-    
+    /* height: 300px; */
+    width: 120px;
+    height: auto;
 }
 
 .painter {
@@ -13,6 +10,16 @@ main {
     height: auto;
     position: relative;
     display: flex;
+}
+
+.edit-but {
+    width: 120px;
+    background-color: rgb(255, 168, 118);
+    border: 0;
+    font-weight: bold;
+    padding: 5px;
+    font-size: 15px;
+    border-radius: 4px;
 }
 
 .painter-photo {
@@ -31,9 +38,9 @@ main {
 .p-text {
     margin: auto;
     padding: 5px;
-    width: 60%;
+    width: 100%;
     height: auto;
     text-align: justify;
     text-indent: 1.5em;
-    font-size: 18px;
+    font-size: 22px;
 }
